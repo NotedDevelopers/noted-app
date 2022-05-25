@@ -5,11 +5,22 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AuthenticationService {
+  private final UserRepository userRepository = new UserRepositoryImpl();
+
   public AuthenticationDetails checkAuthentication(HttpServletRequest request) {
-    // perform some sort of authentication check ...
+    var token = request.getHeader("X-Auth-Token");
+    if (token == null) {
+      throw new UnauthenticatedException();
+    }
+
+    var user = userRepository.findByToken(token);
+
+    if (user == null) {
+      throw new UnauthenticatedException();
+    }
 
     var details = new AuthenticationDetails();
-    details.setUserName("user1");
+    details.setUserName(user.getUserName());
 
     return details;
   }
