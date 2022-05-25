@@ -1,0 +1,15 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+group = 'com.noted'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

@@ -1,0 +1,5 @@
+plugins {
+    id 'noted.app.java-common-conventions'
+
+    id 'java-library'
+}

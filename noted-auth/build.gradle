@@ -1,0 +1,17 @@
+plugins {
+    id 'noted.app.java-library-conventions'
+
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+dependencyManagement {
+    dependencies {
+        dependency 'org.springframework:spring-context:5.3.20'
+        dependency 'org.apache.tomcat.embed:tomcat-embed-core:9.0.63'
+    }
+}
+
+dependencies {
+    implementation 'org.springframework:spring-context'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-core'
+}

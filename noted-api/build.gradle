@@ -1,0 +1,10 @@
+plugins {
+    id 'noted.app.java-application-conventions'
+
+    id 'org.springframework.boot' version '2.7.0'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+dependencies {
+    implementation project(':noted-auth')
+}
